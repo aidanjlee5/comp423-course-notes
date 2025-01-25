@@ -1,0 +1,38 @@
+*   [33mcommit dd5775cb959061f246235f35c238a1ae88e5e285[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/mt04-setup[m[33m, [m[1;32mmt04-setup[m[33m)[m
+[31m|[m[32m\[m  Merge: 855dba9 3eac67f
+[31m|[m [32m|[m Author: Aidan Lee <aidanjlee5@gmail.com>
+[31m|[m [32m|[m Date:   Wed Jan 22 19:40:01 2025 +0000
+[31m|[m [32m|[m 
+[31m|[m [32m|[m     Merge branch 'edits/mt04-setup' into mt04-setup
+[31m|[m [32m|[m     
+[31m|[m [32m|[m     Merging the review changes of edits/mto4-setup
+[31m|[m [32m|[m 
+[31m|[m * [33mcommit 3eac67f990dc6f02a19c240988800ed54138fc6c[m[33m ([m[1;31morigin/edits/mt04-setup[m[33m, [m[1;32medits/mt04-setup[m[33m)[m
+[31m|[m[31m/[m  Author: Sushant Marella <sushantmarella@gmail.com>
+[31m|[m   Date:   Wed Jan 22 19:25:55 2025 +0000
+[31m|[m   
+[31m|[m       add reviewer name for rust-setup
+[31m|[m 
+* [33mcommit 855dba9e73506301292946babc10417f0f451b2e[m
+[32m|[m Author: Aidan Lee <aidanjlee5@gmail.com>
+[32m|[m Date:   Wed Jan 22 19:16:34 2025 +0000
+[32m|[m 
+[32m|[m     Add rust-setup.md
+[32m|[m 
+* [33mcommit 41575bbb457acb495e4b0e9f7dafb27c6d12c32c[m
+[32m|[m Author: Aidan Lee <aidanjlee5@gmail.com>
+[32m|[m Date:   Wed Jan 15 21:21:07 2025 +0000
+[32m|[m 
+[32m|[m     added github/workflows
+[32m|[m 
+* [33mcommit 18434ac38263d684f7ed68b053c2e2bbe8875498[m
+[32m|[m Author: Aidan Lee <aidanjlee5@gmail.com>
+[32m|[m Date:   Wed Jan 15 21:15:33 2025 +0000
+[32m|[m 
+[32m|[m     Set up Material for MkDocs and GitHub Action
+[32m|[m 
+* [33mcommit 57f47790cb1d55104dea9bfd716db0ce946d9592[m
+  Author: Aidan Lee <aidanjlee5@gmail.com>
+  Date:   Wed Jan 15 15:40:00 2025 -0500
+  
+      Initial commit with README
