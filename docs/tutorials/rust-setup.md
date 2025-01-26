@@ -34,7 +34,7 @@ git init
 Create a README file: 
 
 ```
-echo"COMP423 Rust Tutorial: https://github.com/<your-username>/comp423-course-notes" > README.mc
+echo"COMP423 Rust Tutorial: https://github.com/<your-username>/comp423-course-notes" > README.md
 ```
 
 !!!Note
@@ -72,6 +72,7 @@ git remote add origin https://github.com/<your-username>/comp423-course-notes.gi
 Check your default branch name with the subcommand git branch. If it's not main, rename it to main with the following command: git branch -M main. Old versions of git choose the name master for the primary branch, but these days main is the standard primary branch name.
 
 Push your local commits to the GitHub repository: 
+
 ```
 git push --set-upstream origin main
 ```
