@@ -1,162 +1,192 @@
-# Setting up a dev container for Rust
+# Setting up a Dev Container for Rust
 
-* Primary Author: Aidan Lee (https://github.com/aidanjlee5)
-* Reviewer: Sushant Marella (https://github.com/sushmarella)
+**Primary Author**: [Aidan Lee](https://github.com/aidanjlee5)  
+**Reviewer**: [Sushant Marella](https://github.com/sushmarella)
 
-<h3>
-Prerequisites
-</h3>
+---
 
-- **GitHub** account is needed to post the project online
-- **Git** is needed to save the project and upload to GitHub
-- **Visual Studio Code** is needed to compile the rust dev container and rust files
-- **Docker** is required to run the dev container
-- Access to **WiFi** for accessing the remote repo 
+## Prerequisites
 
-<h3>Part 1. Project Setup: Creating the Repository<h3>
-<h4>Step 1: Create a local repository<h4>
-Open your terminal or command prompt
-Create a new directory for your project, preferably in a folder you'll know where it is on your computer
+Before starting, make sure you have the following installed and accessible:
 
-```
-mkdir rust-hello-423
-cd rust-hello-423
-```
+- **GitHub** account to host the project online.
+- **Git** to manage version control and upload the project to GitHub.
+- **Visual Studio Code (VS Code)** to compile Rust code and configure the dev container.
+- **Docker** to run the development container.
+- **WiFi** to access remote repositories.
 
-Intialize a git repository in your folder
+---
 
-```
-git init
-```
+## Part 1: Project Setup - Creating the Repository
 
-> This git repository is necessary for controlling all your commits and your local repository
+### Step 1: Create a Local Repository
 
-Create a README file: 
+1. Open your **terminal** or **command prompt**.
+2. Create a new directory for your project, preferably in an easily accessible location:
 
-```
-echo"COMP423 Rust Tutorial: https://github.com/<your-username>/comp423-course-notes" > README.md
-```
+    ```bash
+    mkdir rust-hello-423
+    cd rust-hello-423
+    ```
 
-!!!Note
+3. Initialize a Git repository in your folder:
 
-This is not necessary for your project, but I linked the tutorial to this project for citing purposes 
+    ```bash
+    git init
+    ```
 
-<h4>Step 2. Creating your GitHub Repository</h4>
-Login to your GitHub account and navigate to the Create a New Repository page
+    !!! note
+        This Git repository will help manage your commits and local project changes.
 
-Before creating the repository, make sure 
+4. Create a `README.md` file to document your project:
 
-<ol>
-    <li>
-    Repository Name: rust-hello-423
-    </li>
-    <li>
-    Description: A basic rust tutorial that outputs Hello 423
-    </li>
-    <li>
-    Visibility: Public
-    </li>
-    <li>
-    No README, .gitignore, or licence.
-    </li>
-</ol>
+    ```bash
+    echo "COMP423 Rust Tutorial: https://github.com/aidanjlee5/comp423-course-notes" > README.md
+    ```
 
-<h4> Step 3. Linking your local repository to GitHub</h4>
+    !!! note
+        This is optional for the tutorial, but linking to the tutorial source is good for citing purposes.
 
-Add the GitHub repository as a remote
+### Step 2: Create Your GitHub Repository
 
-```
-git remote add origin https://github.com/<your-username>/comp423-course-notes.git
-```
+1. Log in to your GitHub account.
+2. Navigate to the **Create a New Repository** page.
+3. Use the following settings for your repository:
+   - **Repository Name**: `rust-hello-423`
+   - **Description**: A basic Rust tutorial that outputs "Hello COMP423".
+   - **Visibility**: Public.
+   - Do **not** initialize with a README, `.gitignore`, or license file.
 
-Check your default branch name with the subcommand git branch. If it's not main, rename it to main with the following command: git branch -M main. Old versions of git choose the name master for the primary branch, but these days main is the standard primary branch name.
+### Step 3: Link Your Local Repository to GitHub
 
-Push your local commits to the GitHub repository: 
+1. Add the GitHub repository as a remote:
 
-```
-git push --set-upstream origin main
-```
+    ```bash
+    git remote add origin https://github.com/<your-username>/rust-hello-423.git
+    ```
 
-!!! Understanding the --set-upstream Flag
+2. Check your branch name with `git branch`. If it’s not `main`, rename it to `main`:
 
-```git push --set-upstream origin main```: This command pushes the main branch to the remote repository origin. The ```--set-upstream``` flag sets up the main branch to track the remote branch, meaning future pushes and pulls can be done without specifying the branch name and just writing ```git push origin``` when working on your local main branch. This long flag has a corresponding ```-u``` short flag
+    ```bash
+    git branch -M main
+    ```
 
+    !!! note
+        Older versions of Git use `master` as the primary branch. Modern conventions use `main`.
 
-Back in your web browser, refresh your GitHub repository to see that the same commit you made locally has now been pushed to remote. You can use git log locally to see the commit ID and message which should match the ID of the most recent commit on GitHub. This is the result of pushing your changes to your remote repository
+3. Push your local commits to the GitHub repository:
 
-<h3>Part 2. Setting up the Development Environment</h3>
-<h4>Step 1. Creating the Development Container</h4>
-In VS code, open your comp423-course-notes directory. You can do this via: File > Open Folder or ```code.``` in the terminal
+    ```bash
+    git push --set-upstream origin main
+    ```
 
-Install the Dev Containers extension for VS Code 
+    !!! tip
+        The `--set-upstream` flag (short version: `-u`) links your local branch to the remote branch. After this, you can simply run `git push` or `git pull` without specifying branch names.
 
-Create a .devcontainer directory in the root of your project with the following file inside of this "hidden" configuartion directory
+4. Refresh your GitHub repository in your browser to confirm the push was successful. The commit ID and message in your local repository should match those on GitHub.
 
-```.devcontainer/devcontainer.json```
+---
 
-Paste the following line into the devcontainer.json file: 
+## Part 2: Setting Up the Development Environment
 
-```{
-    "name": "Rust Development Environment",
-    "image": "mcr.microsoft.com/devcontainers/rust:latest",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "rust-lang.rust-analyzer"
-            ]
+### Step 1: Create the Development Container
+
+1. Open the `rust-hello-423` directory in VS Code:
+   - Use **File > Open Folder** in the menu, or  
+   - Run the command:
+
+    ```bash
+    code .
+    ```
+
+2. Install the **Dev Containers** extension in VS Code.
+3. Create a `.devcontainer` directory in the root of your project. Inside this directory, add a `devcontainer.json` file with the following content:
+
+    ```json
+    {
+        "name": "Rust Development Environment",
+        "image": "mcr.microsoft.com/devcontainers/rust:latest",
+        "customizations": {
+            "vscode": {
+                "extensions": [
+                    "rust-lang.rust-analyzer"
+                ]
+            }
         }
     }
-} ```
+    ```
 
-<h4> Step 2. Open the project in a VScode Dev Container </h4>
+### Step 2: Open the Project in a Dev Container
 
-Reopen the project in the container by pressing ```Ctrl+Shift+P``` or ```Cmd+Shift+P``` on Mac, typing "Dev Containers: Reopen in Container," and selecting the option. This may take a few minutes while the image is downloaded and the requirements are installed.
+1. Reopen the project in a Dev Container:
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac).
+   - Type: **Dev Containers: Reopen in Container** and select it.
+2. Wait a few minutes for the container image to download and install.
+3. Verify that Rust is installed by running:
 
-After the dev container is open, run the command: ```rustc --version``` to prove that a recent version of rust is installed
+    ```bash
+    rustc --version
+    ```
 
-<h4>Step 3. Create a new binary project</h4>
+### Step 3: Create a New Binary Project
 
-Run the command ```cargo new hello_world --vcs none``` 
+1. Run the following command to create a new Rust project:
 
-!!! Explanation 
+    ```bash
+    cargo new hello_world --vcs none
+    ```
 
-    --vcs none flag ensures that a new git repository isn't created on your behalf
----
-Make sure the following code overwrited the main.rs file: 
-```fn main() {
-    println!("Hello COMP423!");
-}
-```
+    !!! explanation
+        The `--vcs none` flag prevents Cargo from creating another Git repository for the project.
 
-<h4>Step 4. Building the rust program</h4>
+2. Overwrite the contents of the `main.rs` file in the `src` directory with this code:
 
-Run the following commmands to compile your Rust program, creating an executable in the target/debug/ directory by default (optimized builds go to target/release)
+    ```rust
+    fn main() {
+        println!("Hello COMP423!");
+    }
+    ```
 
-```
-cd hello_world
-cargo build
-```
+### Step 4: Build the Rust Program
 
-Once this finishes compiling, you run the compiled executable using the following command. This is similar to 211's gcc command where
-```gcc -o hello_world main.c ```
-generates a hello_world binary and can be run by ./hello_world
+1. Change into the `hello_world` directory:
 
-```
-.target/debug/hello_world
-```
+    ```bash
+    cd hello_world
+    ```
 
+2. Build your Rust program:
 
-<h4>Step 5. Running the project</h4>
-Alternatively you can run the project using the command 
-```cargo run ``` which compiles the repository and immediately runs the resulting binary
+    ```bash
+    cargo build
+    ```
 
-Either running or building the project should run the command with an output of Hello COMP423 
+    !!! note
+        This command compiles the program and creates an executable in the `target/debug/` directory by default. For optimized builds, executables go to the `target/release` directory.
 
-By following this tutorial, you will be able to get a better understanding of Rust and its functions in industry. 
+3. Run the compiled executable:
 
+    ```bash
+    ./target/debug/hello_world
+    ```
 
+    !!! note
+        This is similar to using `gcc` in COMP211, where:
 
+        ```bash
+        gcc -o hello_world main.c
+        ```
 
+        generates a `hello_world` binary that can be run with `./hello_world`.
 
+### Step 5: Running the Project
 
+Instead of building and running separately, you can use:
 
+    bash
+    cargo run
+    
+This compiles the program and immeidately runs the resulting binary
+
+### Conclusion:
+By following this tutorial, you now have a fully functional Rust development environment using VS Code Dev Containers. You’ve also created a basic Rust program that outputs "Hello COMP423" and learned the basics of working with Cargo for building and running projects. This setup mirrors professional workflows in Rust development, giving you insight into its use in the industry.
