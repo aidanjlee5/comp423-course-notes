@@ -179,8 +179,8 @@ Before starting, make sure you have the following installed and accessible:
 
         generates a `hello_world` binary that can be run with `./hello_world`.
 
-    !!! Warning
-        Remember to ```cd ..``` before committing the project or making any other changes using the terminal
+    !!! warning 
+        Remember to ```cd ..``` to exit the directory before making any changes
 
 ### Step 5: Running the Project
 
@@ -190,21 +190,6 @@ Instead of building and running separately, you can use:
     cargo run
     
 This compiles the program and immeidately runs the resulting binary
-
-### Step 6: Commit and Push your changes
-
-When you have tested the application, run the following commands:
-
-```
-git add .
-git commit -m "New Rust Hello COMP423 Project"
-```
-
-Push to GitHub if you have a remote setup
-```
-git remote add origin <your-repo-url>
-git push -u origin main
-```
 
 ### Conclusion:
 By following this tutorial, you now have a fully functional Rust development environment using VS Code Dev Containers. You’ve also created a basic Rust program that outputs "Hello COMP423" and learned the basics of working with Cargo for building and running projects. This setup mirrors professional workflows in Rust development, giving you insight into its use in the industry.
