@@ -120,8 +120,8 @@ Run the command ```cargo new hello_world --vcs none```
 
 !!! Explanation 
 
---vcs none flag ensures that a new git repository isn't created on your behalf
-
+    --vcs none flag ensures that a new git repository isn't created on your behalf
+---
 Make sure the following code overwrited the main.rs file: 
 ```fn main() {
     println!("Hello COMP423!");
@@ -150,7 +150,9 @@ generates a hello_world binary and can be run by ./hello_world
 Alternatively you can run the project using the command 
 ```cargo run ``` which compiles the repository and immediately runs the resulting binary
 
-Either running or building the project should run the command with an output of Hello COMP423
+Either running or building the project should run the command with an output of Hello COMP423 
+
+By following this tutorial, you will be able to get a better understanding of Rust and its functions in industry. 
 
 
 
