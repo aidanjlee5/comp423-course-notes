@@ -41,7 +41,7 @@ Before starting, make sure you have the following installed and accessible:
 4. Create a `README.md` file to document your project:
 
     ```bash
-    echo "COMP423 Rust Tutorial: https://github.com/aidanjlee5/comp423-course-notes" > README.md
+    echo "COMP423 Rust Tutorial: https://aidanjlee5.github.io/comp423-course-notes/tutorials/rust-setup/" > README.md
     ```
 
     !!! note
