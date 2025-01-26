@@ -186,7 +186,6 @@ Before starting, make sure you have the following installed and accessible:
 
 Instead of building and running separately, you can use:
 
-    
     cargo run
     
 This compiles the program and immeidately runs the resulting binary
