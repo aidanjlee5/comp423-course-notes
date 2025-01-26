@@ -190,5 +190,21 @@ Instead of building and running separately, you can use:
     
 This compiles the program and immeidately runs the resulting binary
 
+
+### Step 6: Publishing your Project on GitHub
+When you’re ready:
+
+```
+git add .
+git commit -m "Initial Go Dev Container setup"
+```
+
+Push to GitHub if you have a remote set up:
+
+```
+git remote add origin <your-repo-url>
+git push -u origin main
+```
+
 ### Conclusion:
 By following this tutorial, you now have a fully functional Rust development environment using VS Code Dev Containers. You’ve also created a basic Rust program that outputs "Hello COMP423" and learned the basics of working with Cargo for building and running projects. This setup mirrors professional workflows in Rust development, giving you insight into its use in the industry.
